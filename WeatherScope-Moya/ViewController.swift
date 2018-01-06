@@ -35,7 +35,7 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var query: UITextField!
   @IBOutlet weak var forecastTable: UITableView!
-
+  
   let owm = OpenWeatherMap()
   let ds = DarkSky()
   let wu = WeatherUnderground()
@@ -60,7 +60,7 @@ extension ViewController {
   @IBAction func fetchOWMForecast(_ sender: UIButton) {
     process(with: owm)
   }
-
+  
   @IBAction func fetchWU(_ sender: UIButton) {
     process(with: wu)
   }
@@ -92,7 +92,7 @@ extension ViewController {
           break
         }
       }
-
+      
     } catch {
       userAlert(title: "Forecast", message: "\(type.stringValue) forecasts are not available from \(provider.name)")
     }
@@ -123,12 +123,6 @@ extension ViewController {
 
 // MARK: - UI output
 extension ViewController: UITableViewDataSource {
-  /// Part of the standard Apple table UI interface, defining the number of rows to display in
-  /// the table
-  ///
-  /// - Parameters:
-  ///   - tableView: Standard Apple API, the table being characterized
-  /// - Returns: The number of rows for which there is data to display
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return forecasts.count
   }

@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -62,7 +62,7 @@ struct OpenWeatherMap: WeatherProvider {
     guard let data = try? response.filterSuccessfulStatusCodes().data,
       let fcst = try? JSONDecoder().decode(OWMForecast.self, from: data) else {
         let reason = response.statusCode == 404 ? "No forecast available for \"\(location)\""
-                                                : "Network error: \(response.statusCode)"
+          : "Network error: \(response.statusCode)"
         completion(nil, reason)
         return
     }
@@ -75,4 +75,3 @@ struct OpenWeatherMap: WeatherProvider {
     completion(model, nil)
   }
 }
-

@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -38,11 +38,11 @@ struct WUAutocomplete: Decodable {
 }
 
 struct WUForecast: Decodable {
-    let current_observation: WUCurrent
+  let current_observation: WUCurrent
 }
 
 struct WUCurrent: Decodable {
-    let relative_humidity: String
-    let weather: String
-    let temp_f: Double
+  let relative_humidity: String
+  let weather: String
+  let temp_f: Double
 }

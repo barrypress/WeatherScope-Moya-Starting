@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,7 @@ import Moya
 struct WeatherModel {
   /// User-readable name of the network source
   let source: String
-
+  
   /// Location for which this specific instance is a report
   let location: String
   
@@ -95,4 +95,3 @@ enum ForecastError: Error {
   case requestTypeNotFound
   case networkError(code: Int)
 }
-

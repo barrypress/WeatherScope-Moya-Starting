@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the \"Software\"), to deal
@@ -40,11 +40,17 @@ enum WeatherUndergroundCityAPI {
 
 extension WeatherUndergroundCityAPI: Moya.TargetType {
   
-  var baseURL: URL {return URL(string: "https://autocomplete.wunderground.com")!}
+  var baseURL: URL {
+    return URL(string: "https://autocomplete.wunderground.com")!
+  }
   
-  var path: String {return "/aq"}
+  var path: String {
+    return "/aq"
+  }
   
-  var method: Moya.Method {return .get}
+  var method: Moya.Method {
+    return .get
+  }
   
   var task: Moya.Task {
     switch self {
@@ -63,10 +69,10 @@ extension WeatherUndergroundCityAPI: Moya.TargetType {
             }
             """.utf8Encoded
   } 
-   
+  
   var  headers: [String : String]? {return ["Content-type": "application/json"]}
 } 
- 
+
 /// Forecast endpoint delivering data for WeatherModel
 ///
 /// - zmwForecast: Endpoint given WeatherUnderground-unique "zmw" parameter
@@ -76,13 +82,15 @@ enum  WeatherUndergroundAPI {
   case zmwForecast(zmw: String)
   case zipCurrentForecast(zip: String)
   case locationCurrentForecast(lat: Double, lon: Double)
-   
+  
   static let APIID = "95015ba475044a4d"
   // Signup at https://www.wunderground.com/weather/api/, API docs at https://www.wunderground.com/weather/api/d/docs
 } 
- 
+
 extension WeatherUndergroundAPI: Moya.TargetType {
-  var baseURL: URL {return URL(string: "https://api.wunderground.com/api/\(WeatherUndergroundAPI.APIID)")!}
+  var baseURL: URL {
+    return URL(string: "https://api.wunderground.com/api/\(WeatherUndergroundAPI.APIID)")!
+  }
   
   var path: String {
     let suffix: String
@@ -94,11 +102,17 @@ extension WeatherUndergroundAPI: Moya.TargetType {
     return "/conditions/q/" + suffix
   }
   
-  var method: Moya.Method {return .get}
+  var method: Moya.Method {
+    return .get
+  }
   
-  var task: Moya.Task {return .requestPlain}
+  var task: Moya.Task {
+    return .requestPlain
+  }
   
-  var headers: [String : String]? {return ["Content-type": "application/json"]}
+  var headers: [String : String]? {
+    return ["Content-type": "application/json"]    
+  }
   
   var sampleData: Data {
     return """
@@ -112,4 +126,3 @@ extension WeatherUndergroundAPI: Moya.TargetType {
             """.utf8Encoded
   }
 }
-

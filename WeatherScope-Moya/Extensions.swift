@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,9 @@ extension Double {
 }
 
 extension String {
-  var cleaned: String {return self.trimmingCharacters(in: NSCharacterSet.whitespaces)}
+  var cleaned: String {
+    return self.trimmingCharacters(in: NSCharacterSet.whitespaces)    
+  }
   
   var urlEscaped: String {
     return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!

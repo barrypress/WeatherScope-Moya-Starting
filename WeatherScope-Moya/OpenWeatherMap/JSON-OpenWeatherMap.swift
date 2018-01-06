@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -29,17 +29,17 @@
 import Foundation
 
 struct OWMForecast: Decodable {
-    var main: OWMForecastMain
-    var weather: [OWMForecastWeather]? = nil
-    var name: String
+  var main: OWMForecastMain
+  var weather: [OWMForecastWeather]? = nil
+  var name: String
 }
 
 struct OWMForecastMain: Decodable {
-    var temp: Double
-    var humidity: Double
+  var temp: Double
+  var humidity: Double
 }
 
 struct OWMForecastWeather: Decodable {
-    var main: String
-    var description: String
+  var main: String
+  var description: String
 }

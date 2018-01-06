@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -28,21 +28,26 @@
 
 import Foundation
 
-//temp, humidity, notes
 struct DSForecast: Decodable {
-    var currently: DSCurrent
+  var currently: DSCurrent
 }
 
 struct DSCurrent: Decodable {
-    var summary: String
-    var temperature: Double
-    var humidity: Double
-    var dewPoint: Double
-    var pressure: Double
-    
-    var relativeHumidity: Double {
-        func fToC(_ temp: Double) -> Double {return 5.0 / 9.0 * (temp - 32.0)}
-        func pressure(_ temp: Double) -> Double {return 6.11 * pow(10.0, 7.5 * temp / (237.7 + temp))}
-        return pressure(fToC(dewPoint)) / pressure(fToC(temperature)) * 100.0
-    }
+  var summary: String
+  var temperature: Double
+  var humidity: Double
+  var dewPoint: Double
+  var pressure: Double
+  
+  var relativeHumidity: Double {
+    return pressure(fToC(dewPoint)) / pressure(fToC(temperature)) * 100.0
+  }
+  
+  func fToC(_ temp: Double) -> Double {
+    return 5.0 / 9.0 * (temp - 32.0)
+  }
+  
+  func pressure(_ temp: Double) -> Double {
+    return 6.11 * pow(10.0, 7.5 * temp / (237.7 + temp))
+  }
 }

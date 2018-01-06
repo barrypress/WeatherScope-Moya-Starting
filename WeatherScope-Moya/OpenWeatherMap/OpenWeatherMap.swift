@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,17 +33,23 @@ enum OpenWeatherMapAPI {
   case cityCurrentForecast(name: String)
   case zipCurrentForecast(cityzip: String)
   case locationCurrentForecast(lat: Double, lon: Double)
-
+  
   static let APIID = "6b15ed22cc85534826bbb961f477c274"
   // Signup at https://openweathermap.org/appid, API docs at https://openweathermap.org/api
 }
 
 extension OpenWeatherMapAPI: Moya.TargetType {
-  var baseURL: URL {return URL(string: "https://api.openweathermap.org/data/2.5")!}
+  var baseURL: URL {
+    return URL(string: "https://api.openweathermap.org/data/2.5")!
+  }
   
-  var path: String {return "/weather"}
+  var path: String {
+    return "/weather"
+  }
   
-  var method: Moya.Method {return .get}
+  var method: Moya.Method {
+    return .get    
+  }
   
   var task: Moya.Task {
     switch self {
@@ -65,7 +71,7 @@ extension OpenWeatherMapAPI: Moya.TargetType {
                                 encoding: URLEncoding.queryString)
     }
   }
-
+  
   var headers: [String : String]? {return ["Content-type": "application/json"]}
   
   var sampleData: Data {
@@ -81,4 +87,3 @@ extension OpenWeatherMapAPI: Moya.TargetType {
       .utf8Encoded
   }
 }
-

@@ -1,4 +1,4 @@
-///// Copyright (c) 2017 Razeware LLC
+/// Copyright (c) 2017 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +37,9 @@ enum DarkSkyAPI {
 }
 
 extension DarkSkyAPI: Moya.TargetType {
-  var baseURL: URL {return URL(string: "https://api.forecast.io/forecast/\(DarkSkyAPI.APIID)/")!}
+  var baseURL: URL {
+    return URL(string: "https://api.forecast.io/forecast/\(DarkSkyAPI.APIID)/")!
+  }
   
   var path: String {
     switch self {
@@ -46,9 +48,13 @@ extension DarkSkyAPI: Moya.TargetType {
     }
   }
   
-  var method: Moya.Method {return .get}
+  var method: Moya.Method {
+    return .get
+  }
   
-  var task: Task {return .requestPlain}
+  var task: Task {
+    return .requestPlain
+  }
   
   var headers: [String : String]? {
     return ["Content-type": "application/json"]
