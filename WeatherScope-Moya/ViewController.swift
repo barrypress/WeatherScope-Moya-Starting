@@ -111,7 +111,7 @@ extension ViewController {
     let coords = query.split(separator: ",").flatMap{Double(String($0).cleaned)}
     if coords.count == 2 {
       return RequestType.location(lat: coords[0], lon: coords[1])
-    } else if let val = Int(query), 0..<10_000 ~= val {
+    } else if let val = Int(query), 0..<100_000 ~= val {
       return RequestType.zip(zip: query)
     } else  if !query.isEmpty {
       return RequestType.city(name: query)

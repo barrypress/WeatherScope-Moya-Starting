@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2YU-EV-OK3">
-                                <rect key="frame" x="16" y="135" width="343" height="513"/>
+                                <rect key="frame" x="16" y="156" width="343" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCellID" id="uzN-p7-u5x">
@@ -32,23 +32,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-uk-nLh" userLabel="Get DS">
-                                <rect key="frame" x="276" y="59" width="62" height="30"/>
-                                <state key="normal" title="Dark Sky"/>
-                                <connections>
-                                    <action selector="fetchDSForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MVz-pf-RTI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-PA-gdK" userLabel="Get OWM">
-                                <rect key="frame" x="37" y="59" width="135" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="QWp-Sg-q7X"/>
-                                </constraints>
-                                <state key="normal" title="OpenWeatherMap"/>
-                                <connections>
-                                    <action selector="fetchOWMForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev7-vV-wDL"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name, Zip-5, or Lat,±Lon" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h66-PN-Etw">
                                 <rect key="frame" x="37.5" y="20" width="300" height="30"/>
                                 <constraints>
@@ -58,32 +41,50 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6i-Fx-fBZ">
-                                <rect key="frame" x="111" y="97" width="153" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="153" id="VD5-ad-fbV"/>
-                                    <constraint firstAttribute="height" constant="30" id="cgW-S1-dtv"/>
-                                </constraints>
-                                <state key="normal" title="Weather Underground"/>
-                                <connections>
-                                    <action selector="fetchWU:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6T-u2-39y"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="19o-PL-o6Z" userLabel="Button Stack">
+                                <rect key="frame" x="111" y="58" width="153" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-uk-nLh" userLabel="Get DS">
+                                        <rect key="frame" x="45.5" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="Dark Sky"/>
+                                        <connections>
+                                            <action selector="fetchDSForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MVz-pf-RTI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-PA-gdK" userLabel="Get OWM">
+                                        <rect key="frame" x="9" y="30" width="135" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="QWp-Sg-q7X"/>
+                                        </constraints>
+                                        <state key="normal" title="OpenWeatherMap"/>
+                                        <connections>
+                                            <action selector="fetchOWMForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev7-vV-wDL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6i-Fx-fBZ">
+                                        <rect key="frame" x="0.0" y="60" width="153" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="153" id="VD5-ad-fbV"/>
+                                            <constraint firstAttribute="height" constant="30" id="cgW-S1-dtv"/>
+                                        </constraints>
+                                        <state key="normal" title="Weather Underground"/>
+                                        <connections>
+                                            <action selector="fetchWU:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6T-u2-39y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="l6i-Fx-fBZ" firstAttribute="top" secondItem="Stk-PA-gdK" secondAttribute="bottom" constant="8" id="2Sq-LQ-zfQ"/>
                             <constraint firstItem="2YU-EV-OK3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6Dr-hk-jxz"/>
-                            <constraint firstItem="2YU-EV-OK3" firstAttribute="top" secondItem="l6i-Fx-fBZ" secondAttribute="bottom" constant="8" id="Anb-wm-wEi"/>
                             <constraint firstItem="2YU-EV-OK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cdk-Yi-qa4"/>
-                            <constraint firstItem="Stk-PA-gdK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="LhG-c2-ERs"/>
-                            <constraint firstItem="l6i-Fx-fBZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MwH-r0-m3E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ns0-uk-nLh" secondAttribute="trailing" constant="37" id="cMn-Q9-oFV"/>
+                            <constraint firstItem="19o-PL-o6Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SXd-2G-Ab2"/>
                             <constraint firstItem="h66-PN-Etw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d0b-0i-IGT"/>
                             <constraint firstItem="h66-PN-Etw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nha-Tf-ZWu"/>
-                            <constraint firstItem="Stk-PA-gdK" firstAttribute="baseline" secondItem="ns0-uk-nLh" secondAttribute="baseline" id="qOO-7k-dXq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2YU-EV-OK3" secondAttribute="bottom" constant="19" id="r4a-gK-CFk"/>
-                            <constraint firstItem="Stk-PA-gdK" firstAttribute="top" secondItem="h66-PN-Etw" secondAttribute="bottom" constant="9" id="vE4-nR-yGp"/>
+                            <constraint firstItem="2YU-EV-OK3" firstAttribute="top" secondItem="19o-PL-o6Z" secondAttribute="bottom" constant="8" id="tuh-Ej-M3u"/>
+                            <constraint firstItem="19o-PL-o6Z" firstAttribute="top" secondItem="h66-PN-Etw" secondAttribute="bottom" constant="8" id="xLC-9L-2Rw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
