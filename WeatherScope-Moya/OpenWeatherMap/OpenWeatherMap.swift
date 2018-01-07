@@ -38,6 +38,7 @@ enum OpenWeatherMapAPI {
   // Signup at https://openweathermap.org/appid, API docs at https://openweathermap.org/api
 }
 
+typealias ParameterDictionary = [String: Any]
 extension OpenWeatherMapAPI: Moya.TargetType {
   var baseURL: URL {
     return URL(string: "https://api.openweathermap.org/data/2.5")!
@@ -52,24 +53,16 @@ extension OpenWeatherMapAPI: Moya.TargetType {
   }
   
   var task: Moya.Task {
+    var parms:ParameterDictionary = ["APPID": OpenWeatherMapAPI.APIID, "units": "imperial"]
     switch self {
     case .cityCurrentForecast(let name):
-      return .requestParameters(parameters: ["q": name,
-                                             "APPID": OpenWeatherMapAPI.APIID,
-                                             "units": "imperial"],
-                                encoding: URLEncoding.queryString)
+      parms += ["q": name]
     case .zipCurrentForecast(let cityzip):
-      return .requestParameters(parameters: ["zip": cityzip,
-                                             "APPID": OpenWeatherMapAPI.APIID,
-                                             "units": "imperial"],
-                                encoding: URLEncoding.queryString)
+      parms += ["zip": cityzip]
     case .locationCurrentForecast(let lat, let lon):
-      return .requestParameters(parameters: ["lat": lat,
-                                             "lon": lon,
-                                             "APPID": OpenWeatherMapAPI.APIID,
-                                             "units": "imperial"],
-                                encoding: URLEncoding.queryString)
+      parms += ["lat": lat, "lon": lon]
     }
+    return .requestParameters(parameters: parms, encoding: URLEncoding.queryString)
   }
   
   var headers: [String : String]? {return ["Content-type": "application/json"]}
@@ -85,5 +78,11 @@ extension OpenWeatherMapAPI: Moya.TargetType {
              "name":"Sandy"}
            """
       .utf8Encoded
+  }
+}
+
+func += (lhs: inout ParameterDictionary, rhs: ParameterDictionary) {
+  for key in rhs.keys {
+    lhs[key] = rhs[key]
   }
 }
