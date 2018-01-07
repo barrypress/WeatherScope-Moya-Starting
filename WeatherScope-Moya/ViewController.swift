@@ -26,6 +26,8 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+// Background photo by Michael DePetris on Unsplash
+
 import UIKit
 import Moya
 
@@ -137,17 +139,9 @@ extension ViewController: UITableViewDataSource {
   ///   specific location in a tree of nested arrays. In this application, there are never multiple levels
   /// - Returns: The UITableViewCell the table view uses to display the specified row.
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCellID") else {fatalError("No cell built for table")}
-    let row = indexPath.row
-    
-    let fcst = forecasts[row]
-    let hum = fcst.humidity.formatted(decimals: 0)
-    var notestext: String = ""
-    if let notes = fcst.notes {
-      notestext = ", \(notes)"
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCellID"),
+        let modelCell = cell as? WeatherTableCell else {fatalError("No cell built for table")}
+    modelCell.setContent(model: forecasts[indexPath.row])
+    return modelCell
     }
-    cell.textLabel?.font = UIFont(name: "Helvetica", size: 12)
-    cell.textLabel?.text = "\(fcst.source)<\(fcst.location)>: \(fcst.temp)°F, \(hum)% RH\(notestext)"
-    return cell
-  }
 }

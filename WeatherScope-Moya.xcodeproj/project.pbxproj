@@ -21,7 +21,7 @@
 		154441121FE99970008260DB /* WeatherUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154441111FE99970008260DB /* WeatherUnderground.swift */; };
 		154441141FE9A624008260DB /* Provider-WeatherUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154441131FE9A624008260DB /* Provider-WeatherUnderground.swift */; };
 		154441161FEF0673008260DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154441151FEF0673008260DB /* Extensions.swift */; };
-		15F71613200149E500CE0A85 /* TableWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F71612200149E500CE0A85 /* TableWeatherView.swift */; };
+		15F716152001879800CE0A85 /* WeatherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F716142001879800CE0A85 /* WeatherTableCell.swift */; };
 		CA7346195D988A363EB2F116 /* Pods_WeatherScope_Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4934FB983F76F6B4A74BC88D /* Pods_WeatherScope_Moya.framework */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -42,7 +42,7 @@
 		154441111FE99970008260DB /* WeatherUnderground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUnderground.swift; sourceTree = "<group>"; };
 		154441131FE9A624008260DB /* Provider-WeatherUnderground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider-WeatherUnderground.swift"; sourceTree = "<group>"; };
 		154441151FEF0673008260DB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		15F71612200149E500CE0A85 /* TableWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableWeatherView.swift; sourceTree = "<group>"; };
+		15F716142001879800CE0A85 /* WeatherTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableCell.swift; sourceTree = "<group>"; };
 		2115F8D2391ADA46A2494F25 /* Pods-WeatherScope-Moya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherScope-Moya.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherScope-Moya/Pods-WeatherScope-Moya.debug.xcconfig"; sourceTree = "<group>"; };
 		4934FB983F76F6B4A74BC88D /* Pods_WeatherScope_Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherScope_Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F0E0DE491D43C121BFEB17 /* Pods-WeatherScope-Moya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherScope-Moya.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherScope-Moya/Pods-WeatherScope-Moya.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,10 +140,10 @@
 				1544410E1FE99832008260DB /* WeatherUnderground */,
 				D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */,
 				154441151FEF0673008260DB /* Extensions.swift */,
-				15F71612200149E500CE0A85 /* TableWeatherView.swift */,
 				154441021FE834F3008260DB /* UserAlert.swift */,
 				154440F61FE6F02C008260DB /* ViewController.swift */,
 				154440FA1FE6FA7A008260DB /* WeatherModel.swift */,
+				15F716142001879800CE0A85 /* WeatherTableCell.swift */,
 				D2A5F2151F4A924B005CD714 /* LaunchScreen.xib */,
 				154440F41FE6EF71008260DB /* Main.storyboard */,
 				D2A5F20A1F4A9144005CD714 /* Assets.xcassets */,
@@ -294,10 +294,10 @@
 				154441031FE834F4008260DB /* UserAlert.swift in Sources */,
 				154441141FE9A624008260DB /* Provider-WeatherUnderground.swift in Sources */,
 				154441011FE70E2D008260DB /* OpenWeatherMap.swift in Sources */,
-				15F71613200149E500CE0A85 /* TableWeatherView.swift in Sources */,
 				154440FF1FE701AC008260DB /* Provider-OpenWeatherMap.swift in Sources */,
 				154440FD1FE6FFF9008260DB /* JSON-OpenWeatherMap.swift in Sources */,
 				154441101FE9985D008260DB /* JSON-WeatherUnderground.swift in Sources */,
+				15F716152001879800CE0A85 /* WeatherTableCell.swift in Sources */,
 				154441121FE99970008260DB /* WeatherUnderground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
