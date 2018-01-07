@@ -32,7 +32,7 @@ import Moya
 enum DarkSkyAPI {
   case locationCurrentForecast(lat: Double, lon: Double)
   
-  static let APIID = "242b64eb600791897d5694c483ef6985"
+  static let APIID = "--Your key here--"
   // Signup at https://darksky.net/dev, API docs at https://darksky.net/dev/docs
 }
 
