@@ -83,7 +83,7 @@ enum  WeatherUndergroundAPI {
   case zipCurrentForecast(zip: String)
   case locationCurrentForecast(lat: Double, lon: Double)
   
-  static let APIID = "95015ba475044a4d"
+  static let APIID = "---yourkeyhere---"
   // Signup at https://www.wunderground.com/signup?mode=api_signup, API docs at https://www.wunderground.com/weather/api/d/docs
 } 
 
