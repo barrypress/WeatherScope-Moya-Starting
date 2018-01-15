@@ -26,13 +26,13 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 import Moya
 
 enum DarkSkyAPI {
   case locationCurrentForecast(lat: Double, lon: Double)
   
-  static let APIID = "--Your key here--"
+  static let APIID = "242b64eb600791897d5694c483ef6985"
+  // Sample: https://api.darksky.net/forecast/---yourkeyhere---/42.3601,-71.0589
   // Signup at https://darksky.net/dev, API docs at https://darksky.net/dev/docs
 }
 

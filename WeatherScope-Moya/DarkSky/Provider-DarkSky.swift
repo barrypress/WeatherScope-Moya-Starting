@@ -33,7 +33,7 @@ struct DarkSky: WeatherProvider {
   var name = "DarkSky"
   
   let provider = MoyaProvider<DarkSkyAPI>(stubClosure: MoyaProvider.neverStub)
-  // testing: (stubClosure: MoyaProvider.immediatelyStub) (stubClosure: MoyaProvider.delayedStub)
+  // testing: (stubClosure: MoyaProvider.immediatelyStub) (stubClosure: MoyaProvider.delayedStub(seconds))
   
   func forecast(_ type: RequestType, completion: @escaping (WeatherModel?, String?) -> Void) throws {
     switch type {
@@ -57,10 +57,13 @@ struct DarkSky: WeatherProvider {
   ///   - location: The subject of the forecast (city, zip, or geolocatio)
   ///   - response: The network response (in Alamofire form)
   ///   - completion: The closure to process the finished WeatherModel forecast
-  func transform(location: String, response: Response, completion: @escaping (_ result: WeatherModel?, _ error: String?) -> Void) {
+  func transform(location: String,
+                 response: Response,
+                 completion: @escaping (_ result: WeatherModel?, _ error: String?) -> Void) {
     guard let data = try? response.filterSuccessfulStatusCodes().data,
       let fcst = try? JSONDecoder().decode(DSForecast.self, from: data) else {
-        let reason = response.statusCode == 404 ? "No forecast available for \"\(location)\""
+        let reason = response.statusCode == 404
+          ? "No forecast available for \"\(location)\""
           : "Network error: \(response.statusCode)"
         completion(nil, reason)
         return

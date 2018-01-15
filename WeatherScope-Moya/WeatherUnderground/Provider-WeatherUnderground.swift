@@ -40,7 +40,7 @@ struct WeatherUnderground: WeatherProvider {
     switch type {
     case .city(let name):
       cityProvider.request(.city(name: name)) { (result)  in
-        result.analysis(ifSuccess: {response in self.forecastForCities(response: response, completion: completion)},
+        result.analysis(ifSuccess: {response in self.forecastForCities(city: name, response: response, completion: completion)},
                         ifFailure: {error in completion(nil, error.localizedDescription)})
       }
     case .zip(let zip):
@@ -61,12 +61,12 @@ struct WeatherUnderground: WeatherProvider {
   /// - Parameters:
   ///   - response: Success response from autocomplete
   ///   - completion: Closure to process the finished WeatherModel forecast
-  func forecastForCities(response: Response, completion: @escaping (_ result: WeatherModel?, _ error: String?) -> Void) {
+  func forecastForCities(city: String, response: Response, completion: @escaping (_ result: WeatherModel?, _ error: String?) -> Void) {
     guard let data = try? response.filterSuccessfulStatusCodes().data,
       let auto = try? JSONDecoder().decode(WUACResults.self, from: data),
       auto.RESULTS.count > 0 else {
-        completion(nil, response.statusCode == 404
-          ? "No forecast available for \"\(name)\""
+        completion(nil, [200, 404].contains(response.statusCode) 
+          ? "No forecast available for \"\(city)\""
           : "Network error \"\(response.statusCode)\"")
         return
     }

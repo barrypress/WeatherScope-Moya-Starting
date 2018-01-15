@@ -34,7 +34,7 @@ enum OpenWeatherMapAPI {
   case zipCurrentForecast(cityzip: String)
   case locationCurrentForecast(lat: Double, lon: Double)
   
-  static let APIID = "--Your key here--"
+  static let APIID = "6b15ed22cc85534826bbb961f477c274"
   // Signup at https://openweathermap.org/appid, API docs at https://openweathermap.org/api
 }
 

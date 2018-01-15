@@ -29,17 +29,17 @@
 import UIKit
 
 class WeatherTableCell: UITableViewCell {
-    @IBOutlet weak var tempText: UILabel!
-    @IBOutlet weak var humidityText: UILabel!
-    @IBOutlet weak var locationText: UILabel!
-    @IBOutlet weak var forecastText: UILabel!
-    @IBOutlet weak var sourceText: UILabel!
-    
-    func setContent(model: WeatherModel) {
-        tempText.text = "\(model.temp)°F"
-        humidityText.text = model.humidity.formatted(decimals: 0) + "% RH"
-        locationText.text = model.location
-        sourceText.text = model.source
-        forecastText.text = model.notes ?? ""
-    }
+  @IBOutlet weak var tempText: UILabel!
+  @IBOutlet weak var humidityText: UILabel!
+  @IBOutlet weak var locationText: UILabel!
+  @IBOutlet weak var forecastText: UILabel!
+  @IBOutlet weak var sourceText: UILabel!
+  
+  func setContent(model: WeatherModel) {
+    tempText.text = "\(model.temp)°F"
+    humidityText.text = model.humidity.formatted(decimals: 0) + "% RH"
+    locationText.text = model.location
+    sourceText.text = model.source
+    forecastText.text = model.notes ?? ""
+  }
 }

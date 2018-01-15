@@ -34,7 +34,7 @@ struct OpenWeatherMap: WeatherProvider {
   let provider = MoyaProvider<OpenWeatherMapAPI>(stubClosure: MoyaProvider.neverStub)
   // testing: (stubClosure: MoyaProvider.immediatelyStub) (stubClosure: MoyaProvider.delayedStub)
   
-  func forecast(_ type: RequestType, completion: @escaping (_ result: WeatherModel?, _ error: String?) -> Void) throws {
+  func forecast(_ type: RequestType, completion: @escaping (_ model: WeatherModel?, _ error: String?) -> Void) throws {
     switch type {
     case .city(let name):
       provider.request(.cityCurrentForecast(name: name)) { result in
@@ -51,7 +51,7 @@ struct OpenWeatherMap: WeatherProvider {
                         ifFailure: {error in completion(nil, error.localizedDescription)})}
     }
   }
-  
+
   /// Common creation of stanard WeatherModel instances from OpenWeatherMap API responses
   ///
   /// - Parameters:

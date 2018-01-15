@@ -26,13 +26,11 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-// Background photo by Michael DePetris on Unsplash
-
 import UIKit
 import Moya
 
 // MARK: - properties and boilerplate
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
   var forecasts: [WeatherModel] = []
   
   @IBOutlet weak var query: UITextField!
@@ -44,12 +42,18 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    query.delegate = self
     forecastTable.dataSource = self
     forecastTable.reloadData()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.view.endEditing(true)
+    return false
   }
 }
 

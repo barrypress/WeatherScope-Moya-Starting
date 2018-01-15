@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="michael-depetris-292238" translatesAutoresizingMaskIntoConstraints="NO" id="pPo-Uo-lSY">
-                                <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2YU-EV-OK3">
                                 <rect key="frame" x="16" y="156" width="343" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,14 +43,14 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="156.5" height="20.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="0.22398792610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="35% RH" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h7-R5-bWY" userLabel="3% RH">
                                                                     <rect key="frame" x="156.5" y="0.0" width="156.5" height="20.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="0.22398792610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -65,21 +62,21 @@
                                                             <rect key="frame" x="0.0" y="20.5" width="313" height="20.5"/>
                                                             <color key="backgroundColor" white="1" alpha="0.22398792610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather forecast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I8-7a-lVF">
                                                             <rect key="frame" x="0.0" y="41" width="313" height="20.5"/>
                                                             <color key="backgroundColor" white="1" alpha="0.22398792610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather forecast source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGX-mW-ONP">
                                                             <rect key="frame" x="0.0" y="61.5" width="313" height="20.5"/>
                                                             <color key="backgroundColor" white="1" alpha="0.22398792610000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -116,9 +113,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="HDv-sk-RJf"/>
                                 </constraints>
-                                <color key="textColor" red="0.7611492044" green="0.8114747886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="19o-PL-o6Z" userLabel="Button Stack">
                                 <rect key="frame" x="0.0" y="58" width="375" height="90"/>
@@ -126,36 +123,26 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-uk-nLh" userLabel="Get DS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Dark Sky">
-                                            <color key="titleColor" red="0.76114920438119293" green="0.81147478860054756" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Dark Sky"/>
                                         <connections>
                                             <action selector="fetchDSForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MVz-pf-RTI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-PA-gdK" userLabel="Get OWM">
                                         <rect key="frame" x="0.0" y="30" width="375" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="QWp-Sg-q7X"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="OpenWeatherMap">
-                                            <color key="titleColor" red="0.76114920438119293" green="0.81147478860054756" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="OpenWeatherMap"/>
                                         <connections>
                                             <action selector="fetchOWMForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev7-vV-wDL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6i-Fx-fBZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6i-Fx-fBZ" userLabel="Get Weather Underground">
                                         <rect key="frame" x="0.0" y="60" width="375" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="153" id="VD5-ad-fbV"/>
                                             <constraint firstAttribute="height" constant="30" id="cgW-S1-dtv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Weather Underground">
-                                            <color key="titleColor" red="0.76114920438119293" green="0.81147478860054756" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Weather Underground"/>
                                         <connections>
                                             <action selector="fetchWU:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6T-u2-39y"/>
                                         </connections>
@@ -171,17 +158,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2YU-EV-OK3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6Dr-hk-jxz"/>
-                            <constraint firstItem="pPo-Uo-lSY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CbF-Yj-WJS"/>
                             <constraint firstItem="2YU-EV-OK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cdk-Yi-qa4"/>
-                            <constraint firstItem="pPo-Uo-lSY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LS0-l1-BwO"/>
                             <constraint firstItem="19o-PL-o6Z" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="QwC-ZG-c0j"/>
                             <constraint firstItem="19o-PL-o6Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SXd-2G-Ab2"/>
                             <constraint firstItem="h66-PN-Etw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d0b-0i-IGT"/>
-                            <constraint firstItem="pPo-Uo-lSY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nLZ-bm-8Z3"/>
                             <constraint firstItem="h66-PN-Etw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nha-Tf-ZWu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2YU-EV-OK3" secondAttribute="bottom" constant="19" id="r4a-gK-CFk"/>
                             <constraint firstItem="2YU-EV-OK3" firstAttribute="top" secondItem="19o-PL-o6Z" secondAttribute="bottom" constant="8" id="tuh-Ej-M3u"/>
-                            <constraint firstItem="pPo-Uo-lSY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uJw-hB-qyd"/>
                             <constraint firstItem="19o-PL-o6Z" firstAttribute="top" secondItem="h66-PN-Etw" secondAttribute="bottom" constant="8" id="xLC-9L-2Rw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -196,7 +179,4 @@
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="michael-depetris-292238" width="2416" height="3020"/>
-    </resources>
 </document>
