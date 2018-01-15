@@ -36,10 +36,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var query: UITextField!
   @IBOutlet weak var forecastTable: UITableView!
   
-  let owm = OpenWeatherMap()
-  let ds = DarkSky()
-  let wu = WeatherUnderground()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     query.delegate = self
@@ -59,17 +55,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - Weather model interface
 extension ViewController {
-  @IBAction func fetchDSForecast(_ sender: UIButton) {
-    process(with: ds)
-  }
-  
-  @IBAction func fetchOWMForecast(_ sender: UIButton) {
-    process(with: owm)
-  }
-  
-  @IBAction func fetchWU(_ sender: UIButton) {
-    process(with: wu)
-  }
   
   /// Access the remote API via a Moya provider encapsulated into a WeatherProvider. The
   /// WeatherProvider protocol adds the ability to retrieve a forecast of the type identified

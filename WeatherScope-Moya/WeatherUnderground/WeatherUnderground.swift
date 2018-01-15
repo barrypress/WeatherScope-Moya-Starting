@@ -29,100 +29,11 @@
 import Foundation
 import Moya
 
-/// Intermediate endpoint used to map from city names to "zmw" values. Does not use
-/// an API key
-///
-/// - name: THe name of a US city (known to WU, that is)
-enum WeatherUndergroundCityAPI {
-  case city(name: String)
-  // API docs at https://www.wunderground.com/weather/api/d/docs
-}
-
-extension WeatherUndergroundCityAPI: Moya.TargetType {
-  
-  var baseURL: URL {
-    return URL(string: "https://autocomplete.wunderground.com")!
-  }
-  
-  var path: String {
-    return "/aq"
-  }
-  
-  var method: Moya.Method {
-    return .get
-  }
-  
-  var task: Moya.Task {
-    switch self {
-    case .city(let name):
-      return .requestParameters(parameters: ["query": name, "c": "US"],
-                                encoding: URLEncoding.queryString)
-    }
-  }
-  
-  var sampleData: Data {
-    return """
-            {"RESULTS" : [{"zmw" : "79101.1.99999", "name" : "Amarillo, Texas"},
-                          {"zmw" : "79111.3.99999", "name" : "Amarillo International, Texas"},
-                          {"zmw" : "28262.2.99999", "name" : "Amarillo Park, North Carolina"}
-                         ]
-            }
-            """.utf8Encoded
-  } 
-  
-  var  headers: [String : String]? {return ["Content-type": "application/json"]}
-} 
-
-/// Forecast endpoint delivering data for WeatherModel
-///
-/// - zmwForecast: Endpoint given WeatherUnderground-unique "zmw" parameter
-/// - zipCurrentForecast: Endpoint given a zip code
-/// - locationCurrentForecast: Endpoint given a geocoordinate
 enum  WeatherUndergroundAPI {
   case zmwForecast(zmw: String)
   case zipCurrentForecast(zip: String)
   case locationCurrentForecast(lat: Double, lon: Double)
   
   static let APIID = "---yourkeyhere---"
-  // Signup at https://www.wunderground.com/signup?mode=api_signup, API docs at https://www.wunderground.com/weather/api/d/docs
-} 
-
-extension WeatherUndergroundAPI: Moya.TargetType {
-  var baseURL: URL {
-    return URL(string: "https://api.wunderground.com/api/\(WeatherUndergroundAPI.APIID)")!
-  }
-  
-  var path: String {
-    let suffix: String
-    switch self {      
-    case .zmwForecast(let zmw):                      suffix = "zmw:\(zmw).json"
-    case .zipCurrentForecast(let zip):               suffix = "\(zip).json"
-    case .locationCurrentForecast(let lat, let lon): suffix = "\(lat),\(lon).json"
-    }
-    return "/conditions/q/" + suffix
-  }
-  
-  var method: Moya.Method {
-    return .get
-  }
-  
-  var task: Moya.Task {
-    return .requestPlain
-  }
-  
-  var headers: [String : String]? {
-    return ["Content-type": "application/json"]    
-  }
-  
-  var sampleData: Data {
-    return """
-            {
-              "current_observation" : {
-                "weather" : "Clear",
-                "relative_humidity" : "27%",
-                "temp_f" : 22.600000000000001
-              }
-            }
-            """.utf8Encoded
-  }
 }
+

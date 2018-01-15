@@ -26,20 +26,4 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 
-struct OWMForecast: Decodable {
-  var main: OWMForecastMain
-  var weather: [OWMForecastWeather]? = nil
-  var name: String
-}
-
-struct OWMForecastMain: Decodable {
-  var temp: Double
-  var humidity: Double
-}
-
-struct OWMForecastWeather: Decodable {
-  var main: String
-  var description: String
-}

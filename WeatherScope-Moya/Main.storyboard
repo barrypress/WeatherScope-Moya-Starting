@@ -124,17 +124,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Dark Sky"/>
-                                        <connections>
-                                            <action selector="fetchDSForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MVz-pf-RTI"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-PA-gdK" userLabel="Get OWM">
                                         <rect key="frame" x="0.0" y="30" width="375" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="OpenWeatherMap"/>
-                                        <connections>
-                                            <action selector="fetchOWMForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev7-vV-wDL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6i-Fx-fBZ" userLabel="Get Weather Underground">
                                         <rect key="frame" x="0.0" y="60" width="375" height="30"/>
@@ -143,9 +137,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Weather Underground"/>
-                                        <connections>
-                                            <action selector="fetchWU:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6T-u2-39y"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

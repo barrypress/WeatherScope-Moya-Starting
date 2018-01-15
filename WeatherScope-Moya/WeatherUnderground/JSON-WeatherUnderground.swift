@@ -28,21 +28,4 @@
 
 import Foundation
 
-struct WUACResults: Decodable {
-  let RESULTS: [WUAutocomplete]
-}
 
-struct WUAutocomplete: Decodable {
-  let name: String
-  let zmw: String
-}
-
-struct WUForecast: Decodable {
-  let current_observation: WUCurrent
-}
-
-struct WUCurrent: Decodable {
-  let relative_humidity: String
-  let weather: String
-  let temp_f: Double
-}

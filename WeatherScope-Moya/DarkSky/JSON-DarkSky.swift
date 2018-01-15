@@ -28,26 +28,4 @@
 
 import Foundation
 
-struct DSForecast: Decodable {
-  var currently: DSCurrent
-}
 
-struct DSCurrent: Decodable {
-  var summary: String
-  var temperature: Double
-  var humidity: Double
-  var dewPoint: Double
-  var pressure: Double
-  
-  var relativeHumidity: Double {
-    return pressure(fToC(dewPoint)) / pressure(fToC(temperature)) * 100.0
-  }
-  
-  func fToC(_ temp: Double) -> Double {
-    return 5.0 / 9.0 * (temp - 32.0)
-  }
-  
-  func pressure(_ temp: Double) -> Double {
-    return 6.11 * pow(10.0, 7.5 * temp / (237.7 + temp))
-  }
-}

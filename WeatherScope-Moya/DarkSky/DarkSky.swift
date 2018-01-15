@@ -26,48 +26,4 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Moya
 
-enum DarkSkyAPI {
-  case locationCurrentForecast(lat: Double, lon: Double)
-  
-  static let APIID = "---yourkeyhere---"
-  // Sample: https://api.darksky.net/forecast/---yourkeyhere---/42.3601,-71.0589
-  // Signup at https://darksky.net/dev, API docs at https://darksky.net/dev/docs
-}
-
-extension DarkSkyAPI: Moya.TargetType {
-  var baseURL: URL {
-    return URL(string: "https://api.forecast.io/forecast/\(DarkSkyAPI.APIID)/")!
-  }
-  
-  var path: String {
-    switch self {
-    case .locationCurrentForecast(let lat, let lon):
-      return "\(lat),\(lon)"
-    }
-  }
-  
-  var method: Moya.Method {
-    return .get
-  }
-  
-  var task: Task {
-    return .requestPlain
-  }
-  
-  var headers: [String : String]? {
-    return ["Content-type": "application/json"]
-  }
-  
-  var sampleData: Data {
-    return """
-            {"currently":{"summary": "Clear",
-                          "temperature": 43.11,
-                          "dewPoint": 14.02,
-                          "humidity": 0.3,
-                          "pressure": 1022.4}
-            }
-            """.utf8Encoded
-  }
-}
